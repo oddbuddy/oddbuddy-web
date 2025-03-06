@@ -44,6 +44,21 @@ header {
     align-content: center;
 }
 
+.header-anim-icon {
+    height: 24px;
+    width: 24px;
+    object-fit: cover;
+}
+
+#progressBar {
+    display: none;
+}
+
+#toast-danger,
+#toast-success {
+    display: none;
+}
+
 @media screen and (max-width:1120px) {
     .contact-form-container {
         flex-direction: column;
