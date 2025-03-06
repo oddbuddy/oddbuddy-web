@@ -1,0 +1,46 @@
+.tech-icon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.tech-icon {
+    flex: 1 1 auto;
+    height: 48px;
+    object-fit: contain;
+    filter: grayscale(100%);
+}
+
+.contact-form-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-form-container>* {
+    flex: 1;
+    width: 100%;
+}
+
+.contact-form-container label {
+    text-align: justify;
+}
+
+.footer-copyright {
+    background-color: black;
+    display: flex;
+    height: 56px;
+    align-content: center;
+    color: white;
+    padding-inline: 24px;
+}
+
+.footer-copyright span {
+    align-content: center;
+}
+
+@media screen and (max-width:1120px) {
+    .contact-form-container {
+        flex-direction: column;
+    }
+}
