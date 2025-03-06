@@ -24,7 +24,7 @@ slides.forEach((slide, i) => {
 
 setInterval(nextSlide, 4000); // Auto-slide every 4 seconds
 
-
+let scriptUrl = "https://script.google.com/macros/s/AKfycbwOjXlZETeDHKmzZE65eXphYMGADBHkW-2yFDABPhka54s7O5FGqFP7yBfVusC-eCfp1Q/exec";
 function onSubmit(event) {
     event.preventDefault();
     let name = document.getElementById("name").value;
@@ -46,7 +46,8 @@ function onSubmit(event) {
         query: message
     }
     console.log(data);
-    fetch("https://script.google.com/macros/s/AKfycbzSUwRXH2e3NWbUGQ6rPC7k8gAoHczOoeaChVazKxU6VfSpmd2V6DGF3qrHHG1hY5rYMQ/exec", {
+
+    fetch(scriptUrl, {
         method: "POST",
         redirect: "follow",
         headers: {
