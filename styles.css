@@ -1,3 +1,7 @@
+header {
+    z-index: 999;
+}
+
 .tech-icon-container {
     display: flex;
     flex-wrap: wrap;
@@ -9,7 +13,7 @@
     flex: 1 1 auto;
     height: 48px;
     object-fit: contain;
-    filter: grayscale(100%);
+    /* filter: grayscale(100%); */
 }
 
 .contact-form-container {
@@ -35,6 +39,7 @@
     padding-inline: 24px;
 }
 
+
 .footer-copyright span {
     align-content: center;
 }
@@ -42,5 +47,26 @@
 @media screen and (max-width:1120px) {
     .contact-form-container {
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width:720px) {
+    .footer-copyright {
+        flex-direction: column;
+        height: unset;
+        padding: 16px 0;
+    }
+
+    .tech-icon-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        gap: 1.5rem;
+    }
+
+    .tech-icon {
+        height: 28px;
     }
 }
