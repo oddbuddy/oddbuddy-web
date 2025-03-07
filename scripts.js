@@ -60,13 +60,13 @@ function onSubmit(event) {
         document.getElementById("email").value = "";
         document.getElementById("phone").value = "";
         document.getElementById("message").value = "";
-        successMessage.style.display = "block";
+        successMessage.style.display = "flex";
         setTimeout(() => {
             successMessage.style.display = "none";
         }, 3000);
     }).catch((error) => {
         console.error("Error:", error);
-        errorMessage.style.display = "block";
+        errorMessage.style.display = "flex";
         setTimeout(() => {
             errorMessage.style.display = "none";
         }, 3000);
