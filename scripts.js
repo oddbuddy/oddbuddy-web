@@ -1,53 +1,71 @@
-let slides = document.querySelectorAll(".slide");
-let currentSlide = 0;
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
 
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        if (i === index) {
-            slide.style.display = "block"; // Make the active slide visible
-
-        } else {
-            slide.style.display = "none";
-        }
-    });
-}
-
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-}
-
-// Initialize first slide
-slides.forEach((slide, i) => {
-    if (i !== 0) slide.style.display = "none"; // Hide all except first
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
 });
 
-setInterval(nextSlide, 4000); // Auto-slide every 4 seconds
+(function () {
+    const root = document.documentElement;
+    const btn = document.getElementById('themeBtn');
+    const saved = localStorage.getItem('theme');
+    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    function apply(theme) {
+        if (theme === 'light') { root.setAttribute('data-theme', 'light') } else { root.removeAttribute('data-theme') }
+        localStorage.setItem('theme', theme);
+    }
+    apply(saved || (prefersLight ? 'light' : 'dark'));
+    btn.addEventListener('click', () => {
+        const isLight = root.getAttribute('data-theme') === 'light';
+        apply(isLight ? 'dark' : 'light');
+    });
+})();
 
-function onSubmit(event) {
-    event.preventDefault();
+// Simple tilt effect
+document.querySelectorAll('[data-tilt]').forEach(card => {
+    let rAF; const max = 8;
+    function onMove(e) {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width; // 0..1
+        const y = (e.clientY - rect.top) / rect.height; // 0..1
+        const rx = (0.5 - y) * max;
+        const ry = (x - 0.5) * max;
+        cancelAnimationFrame(rAF);
+        rAF = requestAnimationFrame(() => {
+            card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+        });
+    }
+    function reset() { card.style.transform = 'rotateX(0) rotateY(0)' }
+    card.addEventListener('mousemove', onMove);
+    card.addEventListener('mouseleave', reset);
+});
+
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+
+// Contact form submit
+const form = document.getElementById('contactForm');
+const formstatus = document.getElementById('formStatus');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formstatus.textContent = 'Sending…';
+
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
+    let subject = document.getElementById("subject").value;
     let message = document.getElementById("message").value;
-    let submitButton = document.getElementById("submitButton");
-    let progressBar = document.getElementById("progressBar");
-    let successMessage = document.getElementById("toast-success");
-    let errorMessage = document.getElementById("toast-danger");
-
-    progressBar.style.display = "block";
-    submitButton.style.display = "none";
 
     let data = {
         name: name,
         email: email,
-        phone: phone,
+        subject: subject,
         query: message
     }
 
     const body = JSON.stringify(data);
 
-    fetch("https://script.google.com/macros/s/AKfycbzfGkg797kzj5Kz45eeRBHQ30qVN-QJJ66m2h4BeV7idFh-QneBi-coXTqOVlqb4MhQJQ/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbww24PTd6LgBC_fpwWqzRrQham461waHrIst8bLeTnvIW-gTh3yihqJ23wvd7ZaVeDe8Q/exec", {
         method: "POST",
         mode: "no-cors",
         headers: {
@@ -55,23 +73,10 @@ function onSubmit(event) {
         },
         body: body
     }).then((result) => {
-        console.log("Success:", result);
-        document.getElementById("name").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("phone").value = "";
-        document.getElementById("message").value = "";
-        successMessage.style.display = "flex";
-        setTimeout(() => {
-            successMessage.style.display = "none";
-        }, 3000);
+        formstatus.textContent = `Thanks, ${data.name || 'friend'}! We\'ll get back to you at ${data.email}.`;
     }).catch((error) => {
-        console.error("Error:", error);
-        errorMessage.style.display = "flex";
-        setTimeout(() => {
-            errorMessage.style.display = "none";
-        }, 3000);
+        formstatus.textContent = `Oops, something went wrong. Please try again.`;
     }).finally(() => {
-        progressBar.style.display = "none";
-        submitButton.style.display = "block";
+        form.reset();
     });
-}
+});
