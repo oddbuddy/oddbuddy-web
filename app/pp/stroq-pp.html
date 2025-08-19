@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>STROQ – Privacy Policy</title>
+    <meta name="description"
+        content="STROQ Privacy Policy – We don’t collect personal data, require logins, or request device permissions. All features work without access." />
+    <meta property="og:title" content="STROQ – Privacy Policy" />
+    <meta property="og:description"
+        content="We don’t collect personal data, require logins, or request device permissions. All features work without access." />
+    <meta name="theme-color" content="#0ea5e9" />
+    <style>
+        :root {
+            --bg: #0b1020;
+            --card: #12172a;
+            --muted: #8aa0b8;
+            --text: #e8edf7;
+            --brand: #0ea5e9;
+            --ok: #16a34a;
+            --border: #1d2440;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #f7fafc;
+                --card: #ffffff;
+                --muted: #5b6b7a;
+                --text: #0f172a;
+                --brand: #0369a1;
+                --ok: #15803d;
+                --border: #e5e7eb;
+            }
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+            background: radial-gradient(1000px 600px at 80% -10%, rgba(14, 165, 233, .08), transparent 60%),
+                radial-gradient(800px 500px at -10% 0%, rgba(99, 102, 241, .08), transparent 60%),
+                var(--bg);
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 32px 20px 64px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 24px 0 12px;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--brand), #60a5fa);
+            box-shadow: 0 8px 30px rgba(14, 165, 233, .35);
+            display: grid;
+            place-items: center;
+            color: white;
+            font-weight: 800;
+            letter-spacing: .5px;
+        }
+
+        h1 {
+            font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.4rem);
+            margin: 0;
+        }
+
+        .tag {
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        nav {
+            margin: 18px 0 26px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 8px 12px;
+            border-radius: 12px;
+            font-size: .95rem;
+        }
+
+        nav a:hover {
+            border-color: var(--brand);
+            box-shadow: 0 4px 14px rgba(14, 165, 233, .15);
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 22px;
+            margin: 16px 0;
+        }
+
+        h2 {
+            margin: 0 0 10px;
+            font-size: 1.25rem;
+        }
+
+        p,
+        li {
+            line-height: 1.7;
+            color: var(--text);
+        }
+
+        .summary-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin: 10px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .summary-list li {
+            border: 1px dashed var(--border);
+            border-radius: 14px;
+            padding: 14px;
+            background: color-mix(in oklab, var(--card) 92%, black 8%);
+        }
+
+        .ok {
+            color: var(--ok);
+            font-weight: 700;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        .kbd {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+            background: rgba(148, 163, 184, .16);
+            border: 1px solid var(--border);
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-size: .9rem;
+        }
+
+        footer {
+            margin-top: 36px;
+            padding-top: 18px;
+            border-top: 1px dashed var(--border);
+            color: var(--muted);
+            font-size: .95rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 6px 10px;
+            background: var(--card);
+        }
+
+        .badge b {
+            color: var(--ok);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        @media (min-width: 800px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        a {
+            color: var(--brand);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img class="logo" aria-hidden="true" src="./assets/stroqplayArtboard 3.png" alt="">
+            <div>
+                <h1>STROQ – Privacy Policy</h1>
+                <div class="tag">Effective date: <time datetime="2025-08-19">August 19, 2025</time></div>
+            </div>
+        </header>
+
+        <nav aria-label="On this page">
+            <a href="#summary">Summary</a>
+            <a href="#what-we-collect">Data We Collect</a>
+            <a href="#permissions">App Permissions</a>
+            <a href="#third-parties">Third‑Party Services</a>
+            <a href="#children">Children’s Privacy</a>
+            <a href="#rights">Your Rights</a>
+            <a href="#changes">Changes</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <section id="intro" class="card" aria-labelledby="intro-h">
+            <h2 id="intro-h">1) Introduction</h2>
+            <p>
+                STROQ is a simple, student‑friendly productivity app for daily streaks, questions, and to‑dos. We
+                designed STROQ so you can use it <strong>without creating an account, granting device permissions, or
+                    sharing personal data</strong>. This policy explains what information we handle (and mostly, what we
+                do not).
+            </p>
+            <p class="badge" aria-label="No personal data collected"><span>⚑</span> <b>No personal data collected</b> •
+                No login • No tracking</p>
+        </section>
+
+        <section id="summary" class="card" aria-labelledby="summary-h">
+            <h2 id="summary-h">2) Quick Summary</h2>
+            <ul class="summary-list">
+                <li>We <strong>do not collect</strong> or process personal information.</li>
+                <li>The app works <strong>offline</strong>; your tasks and questions stay on your device.</li>
+                <li>No account, email, or phone number is required.</li>
+                <li>No analytics SDKs, ads, or trackers are integrated.</li>
+                <li>No device permissions are requested (camera, location, contacts, etc.).</li>
+                <li>We do not sell, rent, or share any personal data with anyone.</li>
+            </ul>
+        </section>
+
+        <section id="what-we-collect" class="card" aria-labelledby="collect-h">
+            <h2 id="collect-h">3) Information We Collect</h2>
+            <p>
+                <strong>None.</strong> STROQ does not collect, transmit, or store personal data on our servers because
+                we do not operate any servers for the app’s core features. All content you create—such as tasks, custom
+                questions, and streak history—remains <strong>locally on your device</strong>.
+            </p>
+            <div class="grid-2">
+                <div class="card" style="margin:0">
+                    <h3 style="margin:0 0 6px">Local‑only data (on your device)</h3>
+                    <ul>
+                        <li>Task lists and completion status</li>
+                        <li>Custom question bank and daily answers</li>
+                        <li>Imported question bank PDFs and their metadata (e.g., file name)</li>
+                        <li>Streak counts and history</li>
+                        <li>Theme preference (light/dark)</li>
+                    </ul>
+                    <p class="muted">This information never leaves your device unless you explicitly export or back it
+                        up using your OS tools.</p>
+                </div>
+                <div class="card" style="margin:0">
+                    <h3 style="margin:0 0 6px">Data we <em>don’t</em> collect</h3>
+                    <ul>
+                        <li>No names, emails, phone numbers, or identifiers</li>
+                        <li>No usage analytics or crash reports</li>
+                        <li>No location, contacts, calendar, photos, or unrelated files</li>
+                        <li>No advertising identifiers or tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="permissions" class="card" aria-labelledby="perm-h">
+            <h2 id="perm-h">4) App Permissions</h2>
+            <p>
+                STROQ does <strong>not</strong> request or require sensitive device permissions such as camera,
+                microphone, contacts, or location. The only permission used is <strong>file access</strong> when you
+                choose to import a PDF question bank. This access is strictly local, and the files remain on your
+                device.
+            </p>
+        </section>
+
+        <section id="third-parties" class="card" aria-labelledby="third-h">
+            <h2 id="third-h">5) Third‑Party Services & SDKs</h2>
+            <p>
+                STROQ integrates <strong>no</strong> third‑party SDKs for analytics, advertising, or social features. We
+                do not share data with third parties.
+            </p>
+        </section>
+
+        <section id="security" class="card" aria-labelledby="sec-h">
+            <h2 id="sec-h">6) Data Security</h2>
+            <p>
+                Because your data stays on your device, your operating system’s security, backups, and device access
+                controls (e.g., passcode, biometrics) protect it. We recommend keeping your device updated and secured.
+            </p>
+        </section>
+
+        <section id="children" class="card" aria-labelledby="child-h">
+            <h2 id="child-h">7) Children’s Privacy</h2>
+            <p>
+                STROQ is suitable for students and does not collect personal information from anyone, including children
+                under 13 (or the age defined by local law). If you believe a child has shared personal data with us by
+                contacting support, please reach out so we can address it.
+            </p>
+        </section>
+
+        <section id="international" class="card" aria-labelledby="intl-h">
+            <h2 id="intl-h">8) International Users</h2>
+            <p>
+                STROQ is designed to be privacy‑preserving across regions. Since we do not collect personal data or
+                operate user accounts, most provisions of privacy laws such as the EU GDPR and the California CCPA/CPRA
+                do not apply. If you contact us, we will only use the information you provide to respond to your
+                inquiry.
+            </p>
+        </section>
+
+        <section id="rights" class="card" aria-labelledby="rights-h">
+            <h2 id="rights-h">9) Your Privacy Rights</h2>
+            <p>
+                Because we do not collect personal data, there is nothing for you to access, correct, export, or delete
+                within our systems. If you contact us directly and provide information (e.g., an email), you may request
+                that we delete that correspondence at any time.
+            </p>
+        </section>
+
+        <section id="changes" class="card" aria-labelledby="changes-h">
+            <h2 id="changes-h">10) Changes to This Policy</h2>
+            <p>
+                We may update this policy if STROQ’s features change. If we ever introduce account features, cloud sync,
+                analytics, or additional permissions, this page will be updated before those changes take effect. The
+                <span class="kbd">Effective date</span> above shows the latest revision.
+            </p>
+        </section>
+
+        <section id="contact" class="card" aria-labelledby="contact-h">
+            <h2 id="contact-h">11) Contact Us</h2>
+            <p>
+                Questions about privacy? Reach us at <a href="mailto:oddbuddy@hotmail.com">oddbuddy@hotmail.com</a>
+            </p>
+        </section>
+
+        <footer>
+            <p>
+                © <span id="y"></span> OddBuddy. This page is provided for transparency and does not create contractual
+                obligations beyond those required by law.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // set current year in footer without tracking
+        document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
