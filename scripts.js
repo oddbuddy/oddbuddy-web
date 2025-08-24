@@ -13,6 +13,17 @@ menuToggle.addEventListener("click", () => {
     function apply(theme) {
         if (theme === 'light') { root.setAttribute('data-theme', 'light') } else { root.removeAttribute('data-theme') }
         localStorage.setItem('theme', theme);
+        // change logo from queryselectorall 'brand-logo'
+        const logos = document.querySelectorAll('.brand-logo')
+        if (theme === 'light') {
+            logos.forEach(logo => {
+                logo.src = './assets/images/oddbuddylogocolor.png';
+            });
+        } else {
+            logos.forEach(logo => {
+                logo.src = './assets/images/oddbuddylogowhite.png';
+            });
+        }
     }
     apply(saved || (prefersLight ? 'light' : 'dark'));
     btn.addEventListener('click', () => {
