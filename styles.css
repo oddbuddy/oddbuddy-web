@@ -160,6 +160,18 @@ a {
     color: inherit;
 }
 
+.app-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.app-logo {
+    height: 46px;
+    width: 46px;
+    border-radius: 12px;
+}
+
 /* Mobile view */
 @media (max-width: 768px) {
     .menu-toggle {
