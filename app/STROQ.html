@@ -904,15 +904,15 @@
             }
 
             // Windows Detection
-            // if (/Windows/.test(userAgent)) {
-            //     return {
-            //         platform: 'windows',
-            //         icon: '💻',
-            //         text: 'Download for Windows',
-            //         store: 'Microsoft Store',
-            //         url: 'https://www.microsoft.com/store/apps/stroq' // Replace with actual URL
-            //     };
-            // }
+            if (/Windows/.test(userAgent)) {
+                return {
+                    platform: 'windows',
+                    icon: '💻',
+                    text: 'Download for Windows',
+                    store: 'Site',
+                    url: 'https://github.com/oddbuddy/app-releases/releases/download/v1.1.0/STROQ_Installer_1.1.0.exe' // Replace with actual URL
+                };
+            }
 
             // Mac Detection
             if (/Mac/.test(userAgent)) {
