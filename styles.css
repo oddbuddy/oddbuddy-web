@@ -48,7 +48,7 @@ body {
     /* honey */
     --ok: #00d68f;
     --danger: #ff5470;
-    --radius: 18px;
+    --radius: 12px;
     --maxw: 1200px;
     --shadow: 0 10px 30px rgba(0, 0, 0, .35), 0 1px 0 rgba(255, 255, 255, .03) inset;
     --nav-bg: linear-gradient(180deg, rgba(26, 8, 50, 0.85), rgba(89, 45, 147, .85));
